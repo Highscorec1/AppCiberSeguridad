@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <!-- Cyberpunk Vibes ESTAMOS USANDO ESTA COMO PALETA  PRICIPAL-->
+    <color name="primaryColor">#212121</color>
+    <color name="accentColor">#00e5ff</color>
+    <color name="highlightColor">#d500f9</color>
+    <color name="secondaryColor">#9e9e9e</color>
+    <color name="errorColor">#ff1744</color>
+
+    <!-- Elegant Purple  -->
+    <color name="primaryColor1">#4527a0</color>
+    <color name="accentColor1">#9575cd</color>
+    <color name="secondaryColor1">#616161</color>
+    <color name="backgroundColor1">#ffffff</color>
+    <color name="successColor1">#f48fb1</color>
+
+
+
+</resources>
