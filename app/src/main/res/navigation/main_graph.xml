@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/iniciomenuFragment">
+
+    <fragment
+        android:id="@+id/informacionFragment"
+        android:name="com.example.aplicacionhack.ui.informacion.informacionFragment"
+        android:label="fragment_informacion"
+        tools:layout="@layout/fragment_informacion" />
+    <fragment
+        android:id="@+id/iniciomenuFragment"
+        android:name="com.example.aplicacionhack.ui.iniciomenu.iniciomenuFragment"
+        android:label="fragment_iniciomenu"
+        tools:layout="@layout/fragment_iniciomenu" />
+    <fragment
+        android:id="@+id/rulconsejosFragment"
+        android:name="com.example.aplicacionhack.ui.rulconsejos.rulconsejosFragment"
+        android:label="fragment_rulconsejos"
+        tools:layout="@layout/fragment_rulconsejos" />
+</navigation>

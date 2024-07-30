@@ -47,6 +47,14 @@ dependencies {
 
     val activity_version = "1.9.1"
 
+    val navVersion = "2.7.1"
+
+    val daggerVersion = "2.48"
+
+    val retrofitVersion = "2.9.0"
+
+
+
     // ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
@@ -58,6 +66,21 @@ dependencies {
 
     // Kotlin Activity
     implementation(libs.androidx.activity.ktx)
+
+
+    //NavComponent
+    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+
+    //DaggerHilt
+    implementation("com.google.dagger:hilt-android:$daggerVersion")
+    //kapt("com.google.dagger:hilt-compiler:$daggerVersion")
+
+    //Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.3.1")
+
 
 
 
