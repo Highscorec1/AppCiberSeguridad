@@ -5,9 +5,9 @@
 
 
     <!-- texto para la bottombar -->
-    <string name="inicio">inicio</string>
-    <string name="consejos">consejos</string>
-    <string name="informaciòn">informaciòn</string>
+    <string name="inicio">Inicio</string>
+    <string name="consejos">Consejos</string>
+    <string name="informaciòn">Informaciòn</string>
 
 
 
