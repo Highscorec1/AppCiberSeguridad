@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/iniciomenuFragment"
+        android:title="@string/inicio"
+        android:icon="@drawable/baseline_home_24"/>
+
+    <item
+        android:id="@+id/informacionFragment"
+        android:title="@string/informaciòn"
+        android:icon="@drawable/baseline_info_24"
+
+        />
+
+    <item
+        android:id="@+id/rulconsejosFragment"
+        android:title="@string/consejos"
+        android:icon="@drawable/baseline_local_police_24"/>
+
+</menu>
