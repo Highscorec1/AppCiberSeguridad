@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.aplicacionhack.databinding.FragmentRulconsejosBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class rulconsejosFragment : Fragment() {
 
     private var _binding: FragmentRulconsejosBinding? = null

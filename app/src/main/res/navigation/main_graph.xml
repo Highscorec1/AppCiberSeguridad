@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_informacion" />
     <fragment
         android:id="@+id/iniciomenuFragment"
-        android:name="com.example.aplicacionhack.ui.iniciomenu.iniciomenuFragment"
+        android:name="com.example.aplicacionhack.ui.iniciomenu.IniciomenuFragment"
         android:label="fragment_iniciomenu"
         tools:layout="@layout/fragment_iniciomenu" />
     <fragment

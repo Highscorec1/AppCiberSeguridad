@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+
+
 }
 
 android {
@@ -73,8 +77,8 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
     //DaggerHilt
-    implementation("com.google.dagger:hilt-android:$daggerVersion")
-    //kapt("com.google.dagger:hilt-compiler:$daggerVersion")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     //Retrofit
     implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")

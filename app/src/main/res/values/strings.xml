@@ -9,6 +9,18 @@
     <string name="consejos">Consejos</string>
     <string name="informaciòn">Informaciòn</string>
 
+    <!-- texto para la sealed class de iniciomenu -->
+    <string name="Historia">Historia</string>
+    <string name="Leyes">Leyes</string>
+    <string name="SistemasOperativos">Sistemas Operativos</string>
+    <string name="Network">Leyes</string>
+    <string name="SQL">SQL</string>
+    <string name="LINUX">LINUX</string>
+
+
+
+
+
 
 
 </resources>
