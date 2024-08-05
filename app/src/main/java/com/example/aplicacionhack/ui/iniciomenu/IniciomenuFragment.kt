@@ -68,7 +68,7 @@ class IniciomenuFragment : Fragment() {
 
                 inicioViewModel.iniciomenu.collect {
                     //en este punto se prensento un error en dagerhillt falta de un plugin
-                    //cada que se modifique el view model se llamara esta linea 56
+                    //cada que se modifique el view model se llamara esta linea 73
                     //Cambios en iniciomenu
                     inicioadapter.updateList(it)
 
