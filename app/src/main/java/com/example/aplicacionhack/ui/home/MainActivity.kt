@@ -28,9 +28,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initUI(){
-        initNavigation()
+        initNavigation() //navegacion entre los fragments con la bottombar
     }
 
+    //navegacion entre los fragments con la bottombar
     private fun initNavigation() {
         val navHost = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHost.navController

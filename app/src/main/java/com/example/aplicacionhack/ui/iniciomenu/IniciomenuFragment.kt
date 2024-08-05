@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.aplicacionhack.databinding.FragmentIniciomenuBinding
 import com.example.aplicacionhack.ui.iniciomenu.adapter.InicioAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -53,7 +53,7 @@ class IniciomenuFragment : Fragment() {
         inicioadapter = InicioAdapter()
 
         binding.rvIniciomenu.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = GridLayoutManager(context, 2)
             adapter = inicioadapter
         }
 
@@ -67,7 +67,7 @@ class IniciomenuFragment : Fragment() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
 
                 inicioViewModel.iniciomenu.collect {
-                    //en este punto se prensento un error en dagerhillt veremos si es por que la estructura no estaba armada
+                    //en este punto se prensento un error en dagerhillt falta de un plugin
                     //cada que se modifique el view model se llamara esta linea 56
                     //Cambios en iniciomenu
                     inicioadapter.updateList(it)
