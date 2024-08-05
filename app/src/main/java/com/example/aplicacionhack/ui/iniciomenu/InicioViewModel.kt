@@ -23,7 +23,7 @@ class InicioViewModel @Inject constructor() : ViewModel() {
 
         _iniciomenu.value = listOf(
 
-            Historia, Leyes, SistemasOperativos
+            Historia, Leyes, SistemasOperativos, InicioInfo.Sql
 
         )
 
