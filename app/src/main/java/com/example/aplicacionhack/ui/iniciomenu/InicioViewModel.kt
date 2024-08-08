@@ -1,6 +1,7 @@
 package com.example.aplicacionhack.ui.iniciomenu
 
 import androidx.lifecycle.ViewModel
+import com.example.aplicacionhack.data.providers.InicioProvider
 import com.example.aplicacionhack.domain.model.InicioInfo
 import com.example.aplicacionhack.domain.model.InicioInfo.Historia
 import com.example.aplicacionhack.domain.model.InicioInfo.Leyes
@@ -11,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class InicioViewModel @Inject constructor() : ViewModel() {
+class InicioViewModel @Inject constructor(inicioProvider: InicioProvider) : ViewModel() {
 
     //creo una stateFlow para conectar mi fragment con mi viewModel e InicioInfo
 
@@ -21,11 +22,9 @@ class InicioViewModel @Inject constructor() : ViewModel() {
 
     init {
 
-        _iniciomenu.value = listOf(
+        _iniciomenu.value = inicioProvider.getHoroscopes()
 
-            Historia, Leyes, SistemasOperativos, InicioInfo.Network, InicioInfo.Sql, InicioInfo.Linux
 
-        )
 
     }
 

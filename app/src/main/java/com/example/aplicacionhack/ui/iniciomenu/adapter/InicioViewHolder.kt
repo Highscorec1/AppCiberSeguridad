@@ -9,10 +9,12 @@ class InicioViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     private val binding = ItemIniciomenuBinding.bind(view)
 
-    fun render(inicioInfo: InicioInfo){
+    fun render(inicioInfo: InicioInfo, onItemSelected: (InicioInfo) -> Unit){
         val context = binding.tvInicioMenu.context
         binding.ivInicioMenu.setImageResource(inicioInfo.img)
         binding.tvInicioMenu.text = context.getString(inicioInfo.nombre)
+
+        binding.parent.setOnClickListener{ onItemSelected(inicioInfo) }
 
     }
 }
