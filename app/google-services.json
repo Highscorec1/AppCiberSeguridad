@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "820528547989",
+    "project_id": "appciberseguridad-1fc43",
+    "storage_bucket": "appciberseguridad-1fc43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820528547989:android:bfd8a2af2b81c3ea39739c",
+        "android_client_info": {
+          "package_name": "com.example.aplicacionhack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr8llfsi59FsaNCVxPnVJIocQgIvFGKPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

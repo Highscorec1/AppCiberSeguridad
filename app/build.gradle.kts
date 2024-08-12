@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    //plugin fire base
+    id("com.google.gms.google-services")
 
 
 }
@@ -45,6 +47,7 @@ android {
 
 dependencies {
 
+    implementation(libs.common)
     val lifecycle_version = "2.8.4"
 
     val fragment_version = "1.8.2"
@@ -84,6 +87,18 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
     implementation ("com.squareup.okhttp3:logging-interceptor:4.3.1")
+
+    // Glide
+    implementation ("com.github.bumptech.glide:glide:4.15.1") // Verifica que esta versión esté disponible
+    kapt ("com.github.bumptech.glide:compiler:4.15.1") // Necesario si estás usando anotaciones de Glide
+
+    //dependencias firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))// Import the Firebase BoM
+    // TODO: Add the dependencies for Firebase products you want to use
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+    implementation ("com.google.firebase:firebase-firestore-ktx")
+    implementation ("com.google.firebase:firebase-storage-ktx")
 
 
 

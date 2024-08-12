@@ -27,6 +27,7 @@
             android:id="@+id/ivBackBtm"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:background="@color/plomoclaro"
             android:padding="8dp"
             tools:src="@drawable/back" />
 
@@ -63,9 +64,10 @@
             android:text="Pregunta 1/10" />
 
         <ImageView
-            android:id="@+id/imLefArrow"
+            android:id="@+id/ivLefArrow"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:background="@color/plomoclaro"
             android:layout_weight="1"
             tools:src="@drawable/left_arrow"
             android:padding="12dp"/>
@@ -109,7 +111,16 @@
           android:id="@+id/ivPreguntas"
           android:layout_width="match_parent"
           android:layout_height="200dp"
+          android:layout_marginStart="24dp"
+          android:layout_marginTop="8dp"
+          android:layout_marginEnd="24dp"
+          android:layout_marginBottom="16dp"
           tools:src="@tools:sample/avatars" />
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/rvPreguntas"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
 
     </LinearLayout>
   </ScrollView>

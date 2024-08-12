@@ -1,3 +1,4 @@
+# Archivos de configuración local de Android Studio
 *.iml
 .gradle
 /local.properties
@@ -7,9 +8,51 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+
+# Archivos de sistema
 .DS_Store
+
+# Directorios de build
 /build
 /captures
 .externalNativeBuild
 .cxx
+
+# Evitar subir configuraciones locales
 local.properties
+
+# Archivos relacionados con Firebase y Google Services
+# El archivo google-services.json contiene claves de API y otros datos sensibles
+**/google-services.json
+**/GoogleService-Info.plist
+
+# Configuración de Firebase
+firebase-debug.log
+firebase-debug.*.log
+
+# Archivos de configuración de crashlytics (Firebase)
+crashlytics.properties
+fabric.properties
+
+# Archivos de logs y temporales
+*.log
+*.temp
+*.tmp
+
+# Archivos de claves de API o credenciales
+**/*.keystore
+**/*.jks
+**/app/src/main/res/raw/secrets.properties
+**/app/src/main/assets/secrets.json
+
+# Evitar subir scripts o configuraciones específicas de CI/CD con secretos
+**/scripts/*.sh
+**/scripts/*.bat
+**/ci/*.yml
+**/ci/*.yaml
+
+# Otros archivos o directorios generados que no deben estar en el control de versiones
+.idea/
+node_modules/
+coverage/
+tmp/
