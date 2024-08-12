@@ -7,6 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.aplicacionhack.R
 import com.example.aplicacionhack.databinding.ActivityMainBinding
+import com.example.aplicacionhack.domain.preguntasAdapter.PreguntasInfo
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -37,5 +38,8 @@ class MainActivity : AppCompatActivity() {
         navController = navHost.navController
         binding.bottomNavView.setupWithNavController(navController)
     }
+
+
+
 
 }

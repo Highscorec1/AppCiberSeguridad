@@ -1,10 +1,10 @@
 package com.example.aplicacionhack.ui.iniciomenu
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -13,81 +13,50 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.aplicacionhack.databinding.FragmentIniciomenuBinding
 import com.example.aplicacionhack.ui.iniciomenu.adapter.InicioAdapter
+import com.example.aplicacionhack.ui.preguntas.PreguntasActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class IniciomenuFragment : Fragment() {
 
-
-    //Conectar DagerHilt el iniciomenuFragment con el inicioViewModel
     private val inicioViewModel by viewModels<InicioViewModel>()
-
-    //seteamos el adapter
     private lateinit var inicioadapter: InicioAdapter
-
-
     private var _binding: FragmentIniciomenuBinding? = null
     private val binding get() = _binding!!
 
-
-    //Segun el clico de vida un fragment vamos a crear un onViewCreated
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
-
         initUI()
-
     }
 
     private fun initUI() {
-
         initRecyclerView()
-
         initUIState()
-
     }
 
     private fun initRecyclerView() {
-
-        //funcion lambda para la navegacion de momento tiene solo un toast
-        inicioadapter = InicioAdapter(onItemSelected = {
-            Toast.makeText(context, getString(it.nombre), Toast.LENGTH_LONG).show()
-
+        inicioadapter = InicioAdapter(onItemSelected = { inicioInfo ->
+            val intent = Intent(requireContext(), PreguntasActivity::class.java)
+            intent.putExtra("item_id", inicioInfo.id)
+            startActivity(intent)
         })
 
         binding.rvIniciomenu.apply {
             layoutManager = GridLayoutManager(context, 2)
             adapter = inicioadapter
         }
-
     }
 
     private fun initUIState() {
-        //Coorutinas para gestionar hilos que se refiere a los procesos
-        //implementamos lifecyclescope ya que esta se engancha al ciclo de vida del fragmento
-        //este hilo muere cuando el fragmento muere, recomendacion usar este cuando se trate de un fragment o un Activity
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-
                 inicioViewModel.iniciomenu.collect {
-                    //en este punto se prensento un error en dagerhillt falta de un plugin
-                    //cada que se modifique el view model se llamara esta linea 73
-                    //Cambios en iniciomenu
                     inicioadapter.updateList(it)
-
                 }
-
-
             }
-
-
         }
-
-
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -96,5 +65,4 @@ class IniciomenuFragment : Fragment() {
         _binding = FragmentIniciomenuBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
-
 }
