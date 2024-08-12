@@ -1,17 +1,14 @@
 package com.example.aplicacionhack.ui.preguntas.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.translation.ViewTranslationRequest
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aplicacionhack.R
 import com.example.aplicacionhack.databinding.ViewholderpreguntasBinding
-import com.example.aplicacionhack.domain.preguntasAdapter.PreguntasInfo
 
 class PreguntasAdapter (
     val respuestaCorrecta: String?,

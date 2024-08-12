@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,8 +18,14 @@ import com.example.aplicacionhack.domain.preguntasAdapter.PreguntasInfo
 import com.example.aplicacionhack.ui.preguntas.adapter.PreguntasAdapter
 import com.example.aplicacionhack.ui.puntajeacti.PuntajeActivity
 import com.google.firebase.storage.FirebaseStorage
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class PreguntasActivity : AppCompatActivity(), PreguntasAdapter.puntaje {
+
+    @Inject
+    lateinit var preguntasProvider: PreguntasProvider
 
     private lateinit var binding: ActivityPreguntasMainBinding
     private var position: Int = 0
@@ -33,16 +40,15 @@ class PreguntasActivity : AppCompatActivity(), PreguntasAdapter.puntaje {
         val window: Window = this@PreguntasActivity.window
         window.statusBarColor = ContextCompat.getColor(this@PreguntasActivity, R.color.plomoclaro)
 
-        // Obtén el id del tema desde el Intent
         val temaId = intent.getIntExtra("item_id", -1)
         if (temaId == -1) {
-            Toast.makeText(this, "No se pudo identificar el tema", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Tema no válido", Toast.LENGTH_LONG).show()
             finish()
             return
         }
 
-        // Obtén la lista de preguntas según el tema
-        receiverList = PreguntasProvider().obtenerPreguntasPorTema(temaId)
+        // Obtén la lista de preguntas según el tema usando la instancia inyectada
+        receiverList = preguntasProvider.obtenerPreguntasPorTema(temaId)
 
         if (receiverList.isEmpty()) {
             Toast.makeText(this, "No se encontraron preguntas", Toast.LENGTH_LONG).show()
