@@ -1,0 +1,10 @@
+<!-- res/drawable/cylindrical_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/primaryColorDark" /> <!-- Color de fondo -->
+    <corners android:radius="16dp"/> <!-- Radio de los bordes redondeados -->
+    <padding
+        android:left="16dp"
+        android:right="16dp"
+        android:top="8dp"
+        android:bottom="8dp" />
+</shape>

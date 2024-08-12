@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.aplicacionhack.R
 import com.example.aplicacionhack.domain.model.InicioInfo
 
-class InicioAdapter(private var iniciomenuList: List<InicioInfo> = emptyList()) :
+class InicioAdapter(private var iniciomenuList: List<InicioInfo> = emptyList(),
+    private val onItemSelected:(InicioInfo) -> Unit) :
     RecyclerView.Adapter<InicioViewHolder>() {
 
     @SuppressLint("NotifyDataSetChanged")
@@ -28,7 +29,7 @@ class InicioAdapter(private var iniciomenuList: List<InicioInfo> = emptyList()) 
 
     override fun onBindViewHolder(holder: InicioViewHolder, position: Int) {
 
-        holder.render(iniciomenuList[position])
+        holder.render(iniciomenuList[position], onItemSelected)
 
     }
 

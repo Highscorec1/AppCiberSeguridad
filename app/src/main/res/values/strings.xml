@@ -7,7 +7,7 @@
     <!-- texto para la bottombar -->
     <string name="inicio">Inicio</string>
     <string name="consejos">Consejos</string>
-    <string name="informaciòn">Informaciòn</string>
+    <string name="informacion">Información</string>
 
     <!-- texto para la sealed class de iniciomenu -->
     <string name="Historia">Historia</string>
